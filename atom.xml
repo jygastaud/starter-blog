@@ -17,6 +17,7 @@
         <![CDATA[<blockquote>
 <p>A ready to use static blog, powered by <a href="https://cecil.app">Cecil</a> and <a href="https://github.com/Cecilapp/theme-hyde">Hyde</a>.</p>
 </blockquote>
+<p>1 modif </p>
 <h2>How to use?</h2>
 <h3>Managing content with <a href="https://forestry.io">Forestry</a></h3>
 <p>If your goal is managing content quickly, and decide later where to deploy to it, use the following button to import the starter blog to Forestry CMS and start editing immediatelly!</p>
