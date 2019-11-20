@@ -13,11 +13,24 @@ jobs:
         fetch-depth: 1      
     - name: Composer dependencies
       run: composer install --no-ansi --no-interaction --no-suggest --no-progress --prefer-dist
-    - name: Build site with Cecil
-      uses: Cecilapp/Cecil-Action@2.0.0
+    - name: Build test
       env:
         CECIL_VERSION: '4.21.2'
         CECIL_BASEURL: 'https://cecilapp.github.io/starter-blog/'
+      run: |
+        if [[ -z "$CECIL_VERSION" ]]; then
+          echo "### Downloading Cecil"
+          curl -SOL https://cecil.app/cecil.phar
+        else
+          echo "### Downloading Cecil $CECIL_VERSION"
+          curl -SOL https://cecil.app/download/$CECIL_VERSION/cecil.phar
+        fi
+
+        echo "### Building Cecil static site"
+
+        php cecil.phar build -v
+
+        echo "### Cecil Action done"
     - name: Deploy site to GitHub Pages
       uses: Cecilapp/GitHub-Pages-deploy@2.0.0
       env:
