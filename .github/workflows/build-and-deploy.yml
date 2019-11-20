@@ -9,10 +9,8 @@ jobs:
     steps:
     - name: Checkout source
       uses: actions/checkout@v1
-    - name: Install theme(s)
-      uses: pxgamer/composer-action@v2.1.0
-      with:
-        command: install
+    - name: Composer dependencies
+      run: composer install --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Build site with Cecil
       uses: Cecilapp/Cecil-Action@2.0.0
       env:
