@@ -5,6 +5,7 @@ menu: main
 ---
 > A ready to use static blog, powered by [Cecil](https://cecil.app) and [Hyde](https://github.com/Cecilapp/theme-hyde).
 
+1 modif 
 ## How to use?
 
 ### Managing content with [Forestry](https://forestry.io)
